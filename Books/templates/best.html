@@ -1,12 +1,14 @@
 {% extends "_base.html" %}
 {% block content %}
-
-
+<!-- align-items-left -->
+<!-- row-cols-2  -->
+<br><br>
   <div class="container" style="align-content:center">
-    <div class="row row-cols-2 align-items-center">
+    <div class="row justify-content-around">
       <div class="col">
+          <br><br><br>
           <h3> The books people liked the most of all:</h3><br>
-          <ul
+          <ul>
               <li>{{top_25[0]}} by {{top_25[1]}}</li>
               <li>{{top_25[2]}} by {{top_25[3]}}</li>
               <li>{{top_25[4]}} by {{top_25[5]}}</li>
