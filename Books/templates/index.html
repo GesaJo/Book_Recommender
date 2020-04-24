@@ -1,0 +1,39 @@
+{% extends "_base.html" %}
+{% block content %}
+<!-- <!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>BOOK RECOMMENDER</title>
+    <link rel="stylesheet" href="/static/css/styles.css">
+  </head>
+
+  <body> -->
+  <!-- <div class="jumbotron"> -->
+  <div class="container">
+
+    <br><br>
+    <h3>This is your</h3>
+    <!-- <img class = "inotr-image" src="static/image/...png" alt=""> -->
+    <!-- alt= hidden info for image (for: crawler, blind people, ...) -->
+    <br>
+    <h1> Friendly Book Advice</h1>
+    <br><br><br>
+
+    <form action='/recommender' method='get'>
+      <p style="font-size:14pt">Which books do you love?</p>
+        <input type="text" name="book1" placeholder="Enter a book title">
+        <br><p></p>
+        <input type="text" name="book2"  placeholder="Enter a book title">
+        <br><p></p>
+        <input type="text" name="book3"  placeholder="Enter a book title">
+        <br>
+      <input type="submit" value="What should I read next?" class="submit-button">
+    </form>
+    <br><br><br>
+<img class ="friend_image" src="/static/images/intro.jpg" alt="friend" width="500vh";>
+  </div>
+
+  {% endblock %}
+  <!-- </body>
+</html> -->

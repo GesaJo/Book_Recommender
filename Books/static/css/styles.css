@@ -1,0 +1,66 @@
+/* star means everything */
+/* order of specificity: id . class . elements */
+
+/* .jumbotron {
+  height: 100vh;
+  display: flex;
+  background-color: #62003C;
+  color: #364954;
+  /* flex-direction: column;
+  justify-content: center;
+  align-items: center; */
+/* }; */
+
+* {
+  color:#364954;
+};
+
+
+.container {
+            /* height: 100vh; */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            align-content:center;
+};
+
+.friend_image {
+  width: 50vh;
+};
+
+p span {
+color: #A790A1
+};
+
+p {color: #FFE4F8};
+
+h3 {color: #6CB3B7;};
+
+ul {
+  background: #ff9999;
+  padding: 20px;
+};
+
+ul li {
+  list-style-type: circle;
+  background: #3399ff;
+  padding: 20px;
+};
+
+
+.submit-button {margin-top: 10px;};
+/* height: 100% of browser window, height of the container is as big as window*/
+
+
+#given {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+        float: center;}
+};
+
+#words {color: blue}
+
+/* id= for unique things (#), class= can be used for multiple things (.)*/

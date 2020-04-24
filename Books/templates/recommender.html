@@ -1,0 +1,80 @@
+{% extends "_base.html" %}
+{% block content %}
+
+<!-- <!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Actual Recommender</title>
+    <link rel="stylesheet" href="/static/css/styles.css">
+  <!-- </head> -->
+<!-- <div class="jumbotron"> --> -->
+
+<!--
+    <div id="given">
+        <h3 style="font-size=14pt;"> You liked these books:</h3>
+        <p>
+
+        </p>
+    </div> -->
+
+    <div class="container" style="align-content:center">
+      <div class="row row-cols-2 align-items-center">
+        <div class="col">
+          <h3 style="font-size=14pt;"> You liked these books:</h3>
+        </div>
+        <div class="col-20">
+          <span style="color:#735E6E">"{{titles[0]}}"</span> by {{titles[1]}},<br>
+          <span style="color:#735E6E">"{{titles[2]}}"</span> by {{titles[3]}} and <br>
+          <span style="color:#735E6E">"{{titles[3]}}"</span> by {{titles[5]}}<br>
+        </div>
+
+      </div>
+    </div>
+
+  <br><br><br><br>
+
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-sm">
+
+        <h3> Your friend who reads many popular books would recommend these ones:</h3>
+          <p><span style="color:#735E6E">{{recommendations[0]}}</span> by {{recommendations[1]}}</p>
+          <p><span style="color:#735E6E">{{recommendations[2]}}</span> by {{recommendations[3]}}</p>
+          <p><span style="color:#735E6E">{{recommendations[4]}}</span> by {{recommendations[5]}}</p>
+          <p><span style="color:#735E6E">{{recommendations[6]}}</span> by {{recommendations[7]}}</p>
+          <p><span style="color:#735E6E">{{recommendations[8]}}</span> by {{recommendations[9]}}</p>
+      </div>
+      <div class="col-sm">
+        <img class ="friend_image" src="/static/images/friend1.jpg" alt="friend" width="500vh">
+      </div>
+
+    </div>
+  </div>
+
+<br><br>
+
+<div class="container">
+  <div class="row align-items-center">
+    <div class="col-sm">
+      <img class ="friend_image" src="/static/images/friend2.jpg" alt="friend" width="500vh">
+      <br><br><br><br>
+    </div>
+    <div class="col-sm">
+      <h3>Your friend who reads a lot of lesser-known books thinks you'd maybe like these:</h3>
+      <p><span style="color:#735E6E">{{recommendations_lol[0][0]}}</span>  by {{recommendations_lol[0][1]}}</p>
+      <p><span style="color:#735E6E">{{recommendations_lol[0][2]}}</span>  by {{recommendations_lol[0][3]}}</p>
+      <p><span style="color:#735E6E">{{recommendations_lol[1][0]}}</span>  by {{recommendations_lol[1][1]}}</p>
+      <p><span style="color:#735E6E">{{recommendations_lol[1][2]}}</span>  by {{recommendations_lol[1][3]}}</p>
+      <p><span style="color:#735E6E">{{recommendations_lol[2][0]}}</span>  by {{recommendations_lol[2][1]}}</p>
+      <p><span style="color:#735E6E">{{recommendations_lol[2][2]}}</span>  by {{recommendations_lol[2][3]}}</p>
+    </div>
+
+
+  </div>
+</div>
+
+
+
+  {% endblock %}
+<!-- </html> -->
