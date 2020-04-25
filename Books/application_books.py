@@ -3,7 +3,6 @@ from flask import Flask, render_template, request
 from functions_books import recommend_books, similar_books, top_25
 
 
-# instantiate Flask-class
 app = Flask(__name__)
 
 @app.route('/')
@@ -11,16 +10,6 @@ app = Flask(__name__)
 def hey_there():
     return render_template('index.html')
 
-#@app.route('/recommender')
-# @app.route('/reassure')
-# @app.route('/recommender')
-# def reassure():
-#     user_input = dict(request.args)
-#     input_books += list(user_input.values())
-#     _, titles = recommend_books(input_books)
-#     return render_template('reassure.html',
-#                             titles = titles,
-#                             input_books=input_books)
 
 @app.route('/recommender')
 def recommender():

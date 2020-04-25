@@ -4,8 +4,11 @@ from preprocess_data_books import dict_id_location, top_25
 from model_books import model_rec
 from model_sim import model_book_similarities
 
+
 P, Q, trained = model_rec(200, umb)
 sim_matrix = model_book_similarities(matrix2)
+
+
 
 # save similarity_model
 with open('pickle_sim_long.p', 'wb') as file3:

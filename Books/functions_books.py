@@ -14,10 +14,8 @@ with open('Model/pickle_dictionaries.p', "rb") as file2:
 reference_dict = dictionaries[0]  #id : title
 reference_dict_authors = dictionaries[1] # id : authors
 reference_dict_id_loc = dictionaries[2] # id: loc/index
-#reference_id_loc_sim = dictionaries[3]  # id: loc/index
 reference_dict_flipped = dict((v,k) for k,v in reference_dict.items())
 reference_dict_loc_id = dict((v,k) for k,v in reference_dict_id_loc.items())
-
 
 
 
@@ -101,18 +99,21 @@ def similar_books(books):
             #print(book_id_sim)
             # convert book_id into loc/index
             loc_sim = reference_dict_id_loc[book_id_sim]
-            print(loc_sim)
+            #print(loc_sim)
             # get  2 neighbour-books:
-            sim_ids = UU.loc[loc_sim].sort_values(ascending=False)[1:6]
-            #print(UU.loc[book_id_sim].sort_values(ascending=False))
+            sim_ids = UU.loc[loc_sim].sort_values(ascending=False)[10:16]
+            #print(UU.loc[loc_sim].sort_values(ascending=False))
             sim_ids = sim_ids.to_frame()
+            #print (sim_ids)
 
             for i in range(5):
 
-                title = reference_dict[sim_ids.index[i]]
+                sim_id_real = reference_dict_loc_id[sim_ids.index[i]]
+                title = reference_dict[sim_id_real]
+                #print(title)
                 if title not in books:
                     book_rec.append(title)
-                    book_rec.append(get_author(sim_ids.index[i]))
+                    book_rec.append(get_author(sim_id_real))
 
 
         except KeyError:
@@ -122,15 +123,14 @@ def similar_books(books):
 
         recommendations_lol.append(book_rec)
 
-
     return recommendations_lol
 
-# rec = similar_books(["Anna Karenina", "To kill a mockingbird"])
+# rec = similar_books(["Anna Karenina", "Twiligth"])
 # rec
+# 
+# print(UU)
 #
-# # reference_dict_flipped['The Fault in Our Stars']
-# #reference_dict[4]
-# #
-
-# loc_sim = reference_id_loc_sim[4]
-# reference_id_loc_sim
+# # reference_dict_flipped['Twilight (Twilight, #1)']
+# reference_dict_loc_id[0]
+# # fuzzy = process.extractOne("twilight", reference_dict_flipped.keys())
+# fuzzy
