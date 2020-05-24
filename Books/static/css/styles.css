@@ -1,22 +1,13 @@
-/* star means everything */
-/* order of specificity: id . class . elements */
-
-/* .jumbotron {
-  height: 100vh;
-  display: flex;
-  background-color: #62003C;
-  color: #364954;
-  /* flex-direction: column;
-  justify-content: center;
-  align-items: center; */
-/* }; */
 
 * {
   color:#364954;
-};
+  background-color: #b1b7bf;
+}
 
-#intro {
-     margin-left: 200px;};
+/* #intro {
+     margin-left: 200px;
+    background-color: #9ea5af;
+  } */
 
 
 .container_one {
@@ -24,7 +15,8 @@
   justify-content: center;
   align-items: center;
   align-content:center;
-};
+  background-color: #b1b7bf;
+}
 
 .container {
             /* height: 100vh; */
@@ -33,41 +25,42 @@
             justify-content: center;
             align-items: center;
             align-content:center;
-};
+            /* background-color: #9ea5af; */
+}
 
 .intro {position:absolute;
         left: 50%;
 
-};
+}
+
+.col {
+  background-color: #b1b7bf;
+  /* align-items: left; */
+}
 
 .ul {
   list-style-type: disc;
   background: #3399ff;
   padding: 20px;
-};
+}
 
 .friend_image {
   width: 50vh;
-};
+  display:block;
+  margin: auto;
+}
 
 p span {
-color: #A790A1
-};
+font-weight: bold;
+}
 
-p {color: #FFE4F8};
+/* p {color: #FFE4F8;} */
 
-h3 {color: #6CB3B7;};
+h3 {color: #b58851;}
+h2 {color: #b58851;}
+li {list-style-type: disc;}
 
-/* ul {
-  background: #ff9999;
-  padding: 20px;
-}; */
-
-
-
-.submit-button {margin-top: 10px;};
-/* height: 100% of browser window, height of the container is as big as window*/
-
+.submit-button {margin-top: 10px;}
 
 #given {
   display: flex;
@@ -75,8 +68,6 @@ h3 {color: #6CB3B7;};
   justify-content: center;
   align-items: center;
         float: center;}
-};
+}
 
-#words {color: blue}
-
-/* id= for unique things (#), class= can be used for multiple things (.)*/
+#words {color: blue;}

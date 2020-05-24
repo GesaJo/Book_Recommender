@@ -1,14 +1,15 @@
 import pickle
 import numpy as np
 from fuzzywuzzy import process
+import pandas as pd
 
-## depickle
+# depickle
 with open('Model/pickle_model_b.p', "rb") as file:
         trained_model = pickle.load(file)
 with open('Model/pickle_Q_b.p', "rb") as file1:
         Q = pickle.load(file1)
-with open('Model/pickle_sim_long.p', "rb") as file3:
-        UU = pickle.load(file3)
+# with open('Model/pickle_sim_long.p', "rb") as file3:
+#         UU = pickle.load(file3)
 with open('Model/pickle_dictionaries.p', "rb") as file2:
         dictionaries = pickle.load(file2)
 reference_dict = dictionaries[0]  #id : title
@@ -17,7 +18,8 @@ reference_dict_id_loc = dictionaries[2] # id: loc/index
 reference_dict_flipped = dict((v,k) for k,v in reference_dict.items())
 reference_dict_loc_id = dict((v,k) for k,v in reference_dict_id_loc.items())
 
-
+# load sim_matrix from read_csv
+UU = pd.read_csv("Model/df_tril.zip")
 
 def get_author(book_id):
     """ Only return the first of the authors (others may be translators, editors, etc.)"""
@@ -92,45 +94,37 @@ def similar_books(books):
         try:
             book_rec = []  # first element: title of book, second: author
             fuzzy = process.extractOne(book, reference_dict_flipped.keys())
-            #book_rec.append(fuzzy[0])
             # get id of book:
-
             book_id_sim = reference_dict_flipped[fuzzy[0]]
-            #print(book_id_sim)
             # convert book_id into loc/index
             loc_sim = reference_dict_id_loc[book_id_sim]
-            #print(loc_sim)
             # get  2 neighbour-books:
-            sim_ids = UU.loc[loc_sim].sort_values(ascending=False)[10:16]
-            #print(UU.loc[loc_sim].sort_values(ascending=False))
-            sim_ids = sim_ids.to_frame()
-            #print (sim_ids)
+            sim_ids = UU.loc[loc_sim].sort_values(ascending=False)[20:26]
+            sim_ids_2 = UU.loc[:][f"{loc_sim}"].sort_values(ascending=False)[20:26]
+            conc = pd.concat([sim_ids, sim_ids_2])
+            best = conc.sort_values(ascending=False)[:4] # returns 5 best recommendations
+            best = best.to_frame()
 
-            for i in range(5):
-
-                sim_id_real = reference_dict_loc_id[sim_ids.index[i]]
+            for i in range(1,3):
+                n = best.index[i]
+                sim_id_real = reference_dict_loc_id[int(best.index[i])]
                 title = reference_dict[sim_id_real]
-                #print(title)
                 if title not in books:
                     book_rec.append(title)
                     book_rec.append(get_author(sim_id_real))
 
-
         except KeyError:
             for _ in range(5):
-                book_rec.append("There should be a title here...")
-                book_rec.append(" some author")
+                t = process.extractOne(book, reference_dict_flipped.keys())
+                id_no = reference_dict_flipped[t[0]]
+                a = get_author(id_no)
+                book_rec.append(f'Sorry I have not read "{t[0]}"')
+                book_rec.append(f"{a} yet...")
 
         recommendations_lol.append(book_rec)
 
     return recommendations_lol
 
-# rec = similar_books(["Anna Karenina", "Twiligth"])
-# rec
-# 
-# print(UU)
-#
-# # reference_dict_flipped['Twilight (Twilight, #1)']
-# reference_dict_loc_id[0]
-# # fuzzy = process.extractOne("twilight", reference_dict_flipped.keys())
-# fuzzy
+
+# r = similar_books(["Moby Dick", "Ana Karenina", "Orlando"])
+# r
