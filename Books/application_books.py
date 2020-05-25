@@ -1,6 +1,6 @@
 """The traffic-centre of the application - managing routes"""
 from flask import Flask, render_template, request
-from functions_books import recommend_books, similar_books, top_25
+from functions_books import recommend_books, similar_books, top_25, get_top
 
 
 app = Flask(__name__)
@@ -14,13 +14,12 @@ def hey_there():
 @app.route('/recommender')
 def recommender():
     user_input = dict(request.args)
-    input_books =list(user_input.values())#[::2]
+    input_books =list(user_input.values())
 
 
     recommendations, titles = recommend_books(input_books)
-    recommendations_lol = similar_books(input_books)
+    recommendations_lol = get_top(similar_books(input_books))
     return render_template('recommender.html',
-                            #user_input=user_input,
                             input_books=input_books,
                             recommendations=recommendations,
                             recommendations_lol= recommendations_lol,

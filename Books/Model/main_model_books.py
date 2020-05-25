@@ -9,7 +9,6 @@ from model_sim import model_book_similarities
 
 # create and save similarity matrix
 sim_matrix = model_book_similarities(matrix2).round(5)
-# sim_matrix = sim_matrix.round(5)
 fl32 = sim_matrix.astype('float32')
 sim_array= fl32.to_numpy()
 sim_tril = np.tril(sim_array)

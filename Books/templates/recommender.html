@@ -8,9 +8,9 @@
           <h3 style="font-size=14pt;"> You liked these books:&nbsp;&nbsp;&nbsp;</h3>
         </div>
         <div class="col-20">
-          <span style="font-weight: bold;">"{{titles[0]}}"</span> by {{titles[1]}},<br>
-          <span style="font-weight: bold;">"{{titles[2]}}"</span> by {{titles[3]}} and <br>
-          <span style="font-weight: bold;">"{{titles[4]}}"</span> by {{titles[5]}}<br>
+          <span style="font-weight: bold;">{{titles[0]}}</span> by {{titles[1]}},<br>
+          <span style="font-weight: bold;">{{titles[2]}}</span> by {{titles[3]}} and <br>
+          <span style="font-weight: bold;">{{titles[4]}}</span> by {{titles[5]}}<br>
         </div>
 
       </div>
@@ -53,12 +53,11 @@
     </div>
     <div class="col-sm">
       <h3>The other one thinks you'd maybe like these:</h3><br>
-      <p><span>{{recommendations_lol[0][0]}}</span>  by {{recommendations_lol[0][1]}}</p>
-      <p><span>{{recommendations_lol[0][2]}}</span>  by {{recommendations_lol[0][3]}}</p>
-      <p><span>{{recommendations_lol[1][0]}}</span>  by {{recommendations_lol[1][1]}}</p>
-      <p><span>{{recommendations_lol[1][2]}}</span>  by {{recommendations_lol[1][3]}}</p>
-      <p><span>{{recommendations_lol[2][0]}}</span>  by {{recommendations_lol[2][1]}}</p>
-      <p><span>{{recommendations_lol[2][2]}}</span>  by {{recommendations_lol[2][3]}}</p>
+      <p><span>{{recommendations_lol[0].title}}</span>  by {{recommendations_lol[0].author}}</p>
+      <p><span>{{recommendations_lol[1].title}}</span>  by {{recommendations_lol[1].author}}</p>
+      <p><span>{{recommendations_lol[2].title}}</span>  by {{recommendations_lol[2].author}}</p>
+      <p><span>{{recommendations_lol[3].title}}</span>  by {{recommendations_lol[3].author}}</p>
+      <p><span>{{recommendations_lol[4].title}}</span>  by {{recommendations_lol[4].author}}</p>
     </div>
 
 

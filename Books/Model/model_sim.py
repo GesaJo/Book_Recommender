@@ -1,12 +1,10 @@
-""" Model using Collaborative Filtering"""
-
 from scipy.spatial import distance
-# import numpy as np
 import pandas as pd
 from preprocess_data_books import matrix2
 
 
 def model_book_similarities(data):
+    """ Model using Collaborative Filtering"""
 
     data = data.T
     U2 = distance.squareform(distance.pdist(data, metric='cosine'))
