@@ -1,13 +1,16 @@
 # Two book-recommender-models
 
 ![visualization](./Start.gif)
+
 ## A Website to recommend books based on three titles you put in
 Content Based Filtering and Non-negative Matrix Factorization return recommendations for three titles entered by user.
 
 Also featuring a page with the best-rated books from the dataset.
 
 Developed in Week 10 of the Spiced-Bootcamp using Python, fuzzywuzzy, Flask, a little HTML and CSS.
+
 ![visualization](./Recommendations.gif)
+
 ## How to use:
 - Clone the repository
 - Install requirements: pip install -r requirements.txt
