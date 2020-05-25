@@ -1,25 +1,24 @@
 import pickle
+import pandas as pd
+import numpy as np
 from preprocess_data_books import umb, construct_dict, matrix2
 from preprocess_data_books import dict_id_location, top_25
 from model_books import model_rec
 from model_sim import model_book_similarities
 
 
+# create and save similarity matrix
+sim_matrix = model_book_similarities(matrix2).round(5)
+fl32 = sim_matrix.astype('float32')
+sim_array= fl32.to_numpy()
+sim_tril = np.tril(sim_array)
+df_tril = pd.DataFrame(sim_tril)
+df_tril.to_csv("df_tril.csv", compression="zip")
+
+#train and save NMF-model and Q
 P, Q, trained = model_rec(200, umb)
-sim_matrix = model_book_similarities(matrix2)
-
-
-
-# save similarity_model
-with open('pickle_sim_long.p', 'wb') as file3:
-    pickle.dump(sim_matrix, file3)
-
-
-# save trained model:
 with open('pickle_model_b.p', 'wb') as file:
     pickle.dump(trained, file)
-
-# save Q
 with open('pickle_Q_b.p', 'wb') as file1:
     pickle.dump(Q, file1)
 

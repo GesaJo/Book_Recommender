@@ -1,22 +1,13 @@
-/* star means everything */
-/* order of specificity: id . class . elements */
-
-/* .jumbotron {
-  height: 100vh;
-  display: flex;
-  background-color: #62003C;
-  color: #364954;
-  /* flex-direction: column;
-  justify-content: center;
-  align-items: center; */
-/* }; */
 
 * {
   color:#364954;
-};
+  background-color: #b1b7bf;
+}
 
-#intro {
-     margin-left: 200px;};
+/* #intro {
+     margin-left: 200px;
+    background-color: #9ea5af;
+  } */
 
 
 .container_one {
@@ -24,7 +15,8 @@
   justify-content: center;
   align-items: center;
   align-content:center;
-};
+  background-color: #b1b7bf;
+}
 
 .container {
             /* height: 100vh; */
@@ -33,40 +25,55 @@
             justify-content: center;
             align-items: center;
             align-content:center;
-};
+            /* background-color: #9ea5af; */
+}
 
 .intro {position:absolute;
         left: 50%;
 
-};
+}
+
+.col {
+  background-color: #b1b7bf;
+  /* align-items: left; */
+}
+
+.col li {list-style-type: None;
+          padding-bottom: 7px;}
+.col li span {font-weight: bold;}
 
 .ul {
-  list-style-type: disc;
+  list-style-type: None;
   background: #3399ff;
   padding: 20px;
-};
+}
 
 .friend_image {
   width: 50vh;
-};
+  display:block;
+  margin: auto;
+}
 
 p span {
-color: #A790A1
-};
+font-weight: bold;
+}
 
-p {color: #FFE4F8};
+/* p {color: #FFE4F8;} */
+h1 {color: #b58851;}
+h3 {color: #b58851;}
+h2 {color: #b58851;}
+li {list-style-type: disc;}
 
-h3 {color: #6CB3B7;};
+.submit-button {
+  margin-top: 10px;
+  background-color:#b58851;
+  border: 1px solid #364954;
+}
 
-/* ul {
-  background: #ff9999;
-  padding: 20px;
-}; */
-
-
-
-.submit-button {margin-top: 10px;};
-/* height: 100% of browser window, height of the container is as big as window*/
+input[type=text] {
+  background-color: #b1b7bf;
+  border: 1px solid #364954;
+}
 
 
 #given {
@@ -75,8 +82,13 @@ h3 {color: #6CB3B7;};
   justify-content: center;
   align-items: center;
         float: center;}
-};
+}
 
-#words {color: blue}
+#words {color: blue;}
 
-/* id= for unique things (#), class= can be used for multiple things (.)*/
+.nav-item {
+  list-style-type: none;
+  font-size: 20px;
+  /* font-weight: bold; */
+  /* margin-top: 15px; */
+}

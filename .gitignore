@@ -130,6 +130,4 @@ dmypy.json
 
 
 /Books/Model/pickle_sim_b.p
-Books/Model/pickle_sim_long.p
-
-
+/Books/Model/pickle_sim_long.p
